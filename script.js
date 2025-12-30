@@ -55,7 +55,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // Animated role rotation in hero section
-const roles = ['Full Stack Developer', 'ML Engineer', 'Problem Solver', 'Tech Enthusiast'];
+const roles = ['ML Engineer', 'Full Stack Developer', 'Problem Solver', 'Tech Enthusiast'];
 let currentRoleIndex = 0;
 
 function rotateRoles() {
@@ -298,10 +298,10 @@ function typeWriter(element, text, speed = 50) {
     type();
 }
 
-// Parallax effect for sections
+// Parallax effect for sections (excluding project images)
 function handleParallax() {
     const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.project-image, .education-icon');
+    const parallaxElements = document.querySelectorAll('.education-icon');
     
     parallaxElements.forEach(element => {
         const rate = scrolled * -0.5;
