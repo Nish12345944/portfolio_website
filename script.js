@@ -1,4 +1,58 @@
-// Enhanced Portfolio JavaScript with Modern Animations
+// Enhanced Portfolio JavaScript with Modern Animations and Dark Mode
+
+// Theme Management
+const themeToggle = document.getElementById('theme-toggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Initialize theme
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme || (prefersDark.matches ? 'dark' : 'light');
+    setTheme(theme);
+}
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateThemeIcon(theme);
+}
+
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+themeToggle?.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+});
+
+// Loading Screen Management
+function showLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                showSkeletonContent();
+            }, 500);
+        }, 2000);
+    }
+}
+
+function showSkeletonContent() {
+    setTimeout(() => {
+        const skeletons = document.querySelectorAll('.skeleton');
+        const realContent = document.querySelector('.about-real-content');
+        
+        skeletons.forEach(skeleton => skeleton.style.display = 'none');
+        if (realContent) {
+            realContent.style.display = 'block';
+        }
+    }, 1000);
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -325,6 +379,12 @@ window.addEventListener('scroll', () => {
 
 // Initialize animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme
+    initTheme();
+    
+    // Show loading screen
+    showLoadingScreen();
+    
     // Create particles
     createParticles();
     
