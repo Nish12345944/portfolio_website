@@ -21,6 +21,14 @@
         </div>
     </div>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
@@ -132,9 +140,16 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title gradient-text">Projects</h2>
             
-            <div class="project-category">
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ml">ML Projects</button>
+                <button class="filter-btn" data-filter="web">Web Projects</button>
+            </div>
+            
+            <div class="project-category" data-category="ml">
                 <h3 class="category-title">ML Full Stack Projects</h3>
                 <div class="projects-grid">
                     <div class="project-card">
@@ -236,7 +251,7 @@
                 </div>
             </div>
 
-            <div class="project-category">
+            <div class="project-category" data-category="web">
                 <h3 class="category-title">Web Development Projects</h3>
                 <div class="projects-grid">
                     <div class="project-card">
@@ -321,37 +336,117 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title gradient-text">Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category glass-card">
                     <h3>Programming Languages</h3>
                     <div class="skills-list">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">HTML</span>
-                        <span class="skill-item">CSS</span>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Python</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Java</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">SQL</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">HTML</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">CSS</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="90"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category glass-card">
                     <h3>Frameworks & Libraries</h3>
                     <div class="skills-list">
-                        <span class="skill-item">TensorFlow</span>
-                        <span class="skill-item">Flask</span>
-                        <span class="skill-item">Pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">Machine Learning (Scikit-learn)</span>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">TensorFlow</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Flask</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Pandas</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">NumPy</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="87"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Scikit-learn</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="83"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category glass-card">
                     <h3>Tools & Technologies</h3>
                     <div class="skills-list">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">Data Visualization</span>
-                        <span class="skill-item">EDA</span>
-                        <span class="skill-item">Apache Superset</span>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Git</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">PostgreSQL</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">MySQL</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Data Visualization</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">EDA</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item-wrapper">
+                            <span class="skill-item">Apache Superset</span>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="75"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

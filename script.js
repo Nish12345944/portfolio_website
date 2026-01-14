@@ -397,6 +397,76 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
     
+    // Scroll Progress Bar
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.pageYOffset / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+    
+    // Back to Top Button
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Project Filters
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCategories = document.querySelectorAll('.project-category');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            projectCategories.forEach(category => {
+                if (filter === 'all') {
+                    category.classList.remove('hidden');
+                } else {
+                    if (category.dataset.category === filter) {
+                        category.classList.remove('hidden');
+                    } else {
+                        category.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    });
+    
+    // Skill Progress Bars Animation
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBars = entry.target.querySelectorAll('.skill-progress-bar');
+                progressBars.forEach(bar => {
+                    const progress = bar.dataset.progress;
+                    setTimeout(() => {
+                        bar.style.width = progress + '%';
+                    }, 200);
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.skill-category').forEach(category => {
+        skillObserver.observe(category);
+    });
+    
     // Observe elements for scroll animations
     const animateElements = document.querySelectorAll(`
         .project-card, 
