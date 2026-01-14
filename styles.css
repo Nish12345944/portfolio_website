@@ -693,6 +693,28 @@ body {
     transition: all 0.3s ease;
 }
 
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .education-item,
+[data-theme="dark"] .contact-item,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .timeline-content {
+    color: #111827;
+}
+
+[data-theme="dark"] .project-content h4,
+[data-theme="dark"] .project-content p,
+[data-theme="dark"] .skill-category h3,
+[data-theme="dark"] .education-content h3,
+[data-theme="dark"] .education-content h4,
+[data-theme="dark"] .education-content p,
+[data-theme="dark"] .timeline-content h3,
+[data-theme="dark"] .timeline-content h4,
+[data-theme="dark"] .timeline-content p,
+[data-theme="dark"] .contact-item span {
+    color: #111827;
+}
+
 .section-title {
     text-align: center;
     font-size: 3rem;
