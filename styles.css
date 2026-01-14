@@ -888,6 +888,10 @@ body {
     color: #111827;
 }
 
+[data-theme="dark"] .glass-card h3 {
+    color: #ffffff !important;
+}
+
 .section-title {
     text-align: center;
     font-size: 3rem;
