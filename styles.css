@@ -1397,7 +1397,118 @@ body {
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+.skill-category {
+    animation: zoomIn 0.5s ease forwards;
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+
+.education-item {
+    animation: slideInRight 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(odd) {
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(even) {
+    animation: slideInRight 0.6s ease forwards;
+}
+
+.contact-item {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.contact-item:nth-child(1) { animation-delay: 0.1s; }
+.contact-item:nth-child(2) { animation-delay: 0.2s; }
+.contact-item:nth-child(3) { animation-delay: 0.3s; }
+
+.hero-buttons .btn {
+    animation: zoomIn 0.5s ease forwards;
+}
+
+.hero-buttons .btn:nth-child(1) { animation-delay: 1.2s; }
+.hero-buttons .btn:nth-child(2) { animation-delay: 1.4s; }
+
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
@@ -1450,10 +1561,11 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        width: 100%;
     }
     
     .btn {
-        width: 100%;
+        width: 90%;
         max-width: 280px;
         justify-content: center;
     }
@@ -1529,7 +1641,7 @@ body {
     }
     
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
     }
     
@@ -1561,6 +1673,14 @@ body {
         font-size: 1rem;
     }
     
+    .hero-roles {
+        height: 50px;
+    }
+    
+    .role {
+        font-size: 1.1rem;
+    }
+    
     .section-title {
         font-size: 1.8rem;
     }
@@ -1573,8 +1693,16 @@ body {
         padding: 1rem;
     }
     
+    .project-content h4 {
+        font-size: 1.2rem;
+    }
+    
     .skill-category {
         padding: 1.5rem 1rem;
+    }
+    
+    .skill-category h3 {
+        font-size: 1.1rem;
     }
     
     .education-item {
@@ -1585,9 +1713,27 @@ body {
         padding: 1.5rem 1rem;
     }
     
+    .contact-item {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
     .tech-tag {
         font-size: 0.75rem;
         padding: 0.4rem 0.8rem;
+    }
+    
+    .btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.2rem;
     }
 }
 
