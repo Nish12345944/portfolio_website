@@ -897,7 +897,7 @@ body {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 4rem;
-    color: var(--text-primary);
+    color: #ffffff;
     position: relative;
 }
 
@@ -1217,7 +1217,7 @@ body {
 }
 
 .skill-category h3 {
-    color: var(--text-primary);
+    color: #ffffff;
     margin-bottom: 2rem;
     text-align: center;
     font-size: 1.3rem;
