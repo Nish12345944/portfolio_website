@@ -901,6 +901,14 @@ body {
     position: relative;
 }
 
+.education-title {
+    color: #111827;
+}
+
+[data-theme="dark"] .education-title {
+    color: #ffffff;
+}
+
 .section-title::after {
     content: '';
     position: absolute;
