@@ -1444,16 +1444,19 @@ body {
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
     font-weight: 600;
+    text-align: left;
 }
 
 .education-content h4 {
     color: var(--primary-color);
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
+    text-align: left;
 }
 
 .education-content p {
     color: var(--text-secondary);
+    text-align: left;
 }
 
 .education-year {
@@ -1830,6 +1833,12 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 2rem 1.5rem;
+    }
+    
+    .education-content h3,
+    .education-content h4,
+    .education-content p {
+        text-align: left;
     }
     
     .education-icon {
